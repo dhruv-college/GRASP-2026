@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Param EMS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // Polyfill process and Buffer for browser environment
+      window.process = window.process || { env: {} };
+      if (!window.process.env) window.process.env = {};
+      if (!window.process.env.NODE_ENV) window.process.env.NODE_ENV = 'production';
+      
+      // Minimal Buffer polyfill if needed by SDKs
+      window.Buffer = window.Buffer || {
+        isBuffer: () => false,
+        from: (data) => new Uint8Array(data) 
+      };
+    </script>
+    <style>
+      /* Custom scrollbar for dashboard look */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #1e293b; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #475569; 
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #64748b; 
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@18.2.0",
+    "react/": "https://esm.sh/react@18.2.0/",
+    "react-dom": "https://esm.sh/react-dom@18.2.0",
+    "react-dom/": "https://esm.sh/react-dom@18.2.0/",
+    "@google/genai": "https://esm.sh/@google/genai",
+    "recharts": "https://esm.sh/recharts@2.12.7?external=react,react-dom",
+    "lucide-react": "https://esm.sh/lucide-react@0.300.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-slate-900 text-slate-100 antialiased overflow-hidden">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
