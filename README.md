@@ -77,7 +77,6 @@ It uses **AI** to analyze real-time SCADA data, market prices, and weather forec
 1. **Clone the repository**
    ```bash
    git clone https://github.com/yourusername/GRASP-2026.git
-   cd GRASP-2026
    ```
 
 2. **Install Dependencies**
